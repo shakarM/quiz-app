@@ -1,0 +1,88 @@
+{
+  "questions": [
+    {
+      "question": "What's the traditional Kurdish dance known for its energetic and fast movements?",
+      "options": ["Halparke", "Zeybek", "Belly Dance", "Salsa"],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "Which Kurdish festival is celebrated by jumping over fires and lighting bonfires?",
+      "options": ["Newroz", "Eid al-Fitr", "Yalda", "Diwali"],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What's the famous Kurdish dish made from layers of flatbread and meat?",
+      "options": ["Kebab", "Dolma", "Yaprak", "Tendir Kebab"],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What's the traditional Kurdish attire for men?",
+      "options": ["Qamis", "Jellaba", "Sherwani", "Salwar Kameez"],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What's the traditional Kurdish hat that is often worn by men in the region?",
+      "options": ["Fez", "Tarboosh", "Kolāh", "Papakha"],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "Which Kurdish musical instrument is a type of flute made from reed?",
+      "options": ["Oud", "Saz", "Ney", "Zurna"],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What's the famous Kurdish dessert made from thin layers of pastry filled with nuts and honey?",
+      "options": ["Baklava", "Kunafa", "Basbousa", "Lokma"],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What is the traditional Kurdish hat often worn by women with colorful beads and embroidery?",
+      "options": ["Burqa", "Chador", "Taqiyah", "Kalasha"],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What's the Kurdish form of storytelling that often features epic tales and legends?",
+      "options": ["Rumi Poetry", "Qiseh", "Haiku", "Shanameh"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "What's the Kurdish feast that marks the end of Ramadan?",
+      "options": ["Nawruz", "Shab-e Yalda", "Eid al-Fitr", "Holi"],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What's the traditional Kurdish way of brewing and serving tea in a special teapot?",
+      "options": ["Chai Latte", "Samovar", "Teh Tarik", "Tiranga Chai"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "What's the Kurdish bread traditionally baked in a clay oven known as a 'tendir'?",
+      "options": ["Pita Bread", "Naan", "Sangak", "Lavash"],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What's the Kurdish traditional music that is often played with a long-necked stringed instrument?",
+      "options": ["Baglama", "Oud", "Rabab", "Tar"],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What's the Kurdish New Year's Day celebrated on the spring equinox?",
+      "options": ["Diwali", "Nowruz", "Pongal", "Hanukkah"],
+      "correctOption": 1,
+      "points": 10
+    }
+  ]
+}

@@ -1,13 +1,441 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --color-darkest: #343a40;
+  --color-dark: #495057;
+  --color-medium: #ced4da;
+  --color-light: #f1f3f5;
+
+  --color-theme: #1098ad;
+  --color-accent: #ffa94d;
+  --font: "Raleway", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;500;800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@300;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-light);
+  background-color: var(--color-darkest);
+  padding: 3.2rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  width: 50rem;
+}
+
+/* .app-header {
+  width: 66rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.app-header {
+  width: 66rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.error {
+  text-align: center;
+
+  font-weight: 500;
+  padding: 1rem;
+  color: #f1f3f5;
+  background-color: #b4132b;
+  border-radius: 30px;
+  font-family: "Realeway", sans-serif;
+  font-weight: 700;
+  color: var(--color-medium);
+  font-size: 1.9rem;
+}
+
+img {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50% 50%;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  font-size: 5.6rem;
+}
+.main h1 {
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+h2 {
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+h4 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+
+.progress {
+  margin-bottom: 4rem;
+  display: grid;
+  justify-content: space-between;
+  gap: 1.2rem;
+  grid-template-columns: auto auto;
+  font-size: 1.8rem;
+  color: var(--color-medium);
+}
+
+progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 12px;
+  grid-column: 1 / -1;
+}
+
+::-webkit-progress-bar {
+  background-color: var(--color-medium);
+  border-radius: 100px;
+}
+::-webkit-progress-value {
+  background-color: var(--color-theme);
+  border-radius: 100px;
+}
+
+.btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  display: block;
+
+  transition: 0.3s;
+
+  color: #ffa94d;
+  outline: none;
+
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn:not([disabled]):hover {
+  color: #ffa94d;
+  background-color: var(--color-darkest);
+}
+
+.btn-option:not([disabled]):hover {
+  transform: translateX(1.2rem);
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.btn-ui {
+  float: right;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 3.2rem;
+}
+
+.btn-option {
+  width: 100%;
+  text-align: left;
+}
+
+.btn-option.correct {
+  background-color: var(--color-theme);
+  border: 2px solid var(--color-theme);
+  color: var(--color-light);
+}
+.btn-option.wrong {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  color: var(--color-darkest);
+}
+
+.answer {
+  transform: translateX(2rem);
+}
+
+.result {
+  background-color: var(--color-theme);
+  color: var(--color-light);
+  border-radius: 100px;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.result span {
+  font-size: 2.2rem;
+  margin-right: 4px;
+}
+
+.highscore {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  gap: 1.6rem;
+}
+
+.loadText {
+  font-family: "Realeway", sans-serif;
+  font-weight: 500;
+  color: var(--color-medium);
+  font-size: 1.4rem;
+}
+.timer {
+  float: left;
+  font-size: 1.8rem;
+  color: var(--color-medium);
+  border: 2px solid var(--color-dark);
+  padding: 1.35rem 2.8rem;
+  border-radius: 100px;
+}
+
+/* CREDIT: https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+.loader {
+  height: 70px;
+  width: 70px;
+  border: 6px solid rgb(32, 30, 30);
+  border-radius: 50% 50%;
+  border-color: rgb(231, 231, 231) transparent rgb(231, 231, 231) transparent;
+  animation: spin 2s alternate-reverse infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ********** */
+/* First counter example */
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 6rem;
+}
+
+.counter * {
+  font-size: inherit;
+  padding: 0.8rem;
+}
+
+.start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.start h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+.start h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.start-btn {
+  background-color: white;
+  color: #333;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1rem;
+}
+
+.start-btn:hover {
+  background-color: #ced4da;
+  animation: check 1s alternate-reverse infinite;
+}
+
+@keyframes check {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.start h2 {
+  background-color: #ffa94d;
+  color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.questions h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  padding-bottom: 2rem;
+}
+
+.opt-btn {
+  background-color: rgba(0, 0, 139, 0);
+  color: #ffa94d;
+  outline: none;
+  border: #ffa94d solid 2px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.opt-btn:hover {
+  background-color: #ffa94d;
+  color: #333;
+  transition: 0.4s ease;
+  transform: translateX(1.2rem);
+}
+button[disabled] {
+  opacity: 0.8;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+/* Style for a disabled button */
+.progress-elements {
+  color: #d8dadc;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.progress-elements h3 {
+  font-size: 1.5rem;
+}
+.progress-elements span {
+  color: #d8dadc;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+.points {
+  display: flex;
+  justify-content: space-between;
+}
+.finish-msg {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1rem;
+}
+.finish-msg p {
+  color: #343a40;
+  background-color: #ffa94d;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  padding: 1rem;
+}
+.finish-msg h2,
+.finish-msg h2 strong {
+  color: #ffa94d;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  font-size: 1.9rem;
+  padding: 1rem;
+}
+.btn-n {
+  outline: none;
+  background: none;
+  color: #ffa94d;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.6s, transform 0.3s;
+}
+.btn-n:hover {
+  background: #ffa94d;
+  color: #333;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.time {
+  color: #ffa94d;
+  background-color: none;
+
+  padding: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+}
+.btn-n {
+  background-color: #ffa94d;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
 }
